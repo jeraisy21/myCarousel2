@@ -3,6 +3,8 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
  </head> 
  <body>
+  
+
 <ul class="slides">
   <input type="radio" name="radio-btn" id="img-1" checked />
   <li class="slide-container">
@@ -79,6 +81,30 @@
     <label for="img-6" class="nav-dot" id="img-dot-6"></label>
   </li>
 </ul>
+
+<script>
+var myIndex = 0;
+carousel();
+
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("slide slides");
+    for (i = 0; i < x.length; i++) { // -1 right +1 left
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+
+
+</script>
+
+
+
+
 </body>
 
 </html>
